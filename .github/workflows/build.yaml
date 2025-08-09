@@ -19,13 +19,13 @@ jobs:
       #    arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       #    /usr/local/bin/brew install glib || true # this can error on linking
       - name: Build
-        run: | 
-          xcodebuild archive -scheme vd_agent -archivePath vd_agent.xcarchive \
-          TEAM_ID = '' \
-          DEVELOPMENT_TEAM = '' \
-          CODE_SIGNING_ALLOWED = 'NO' \
-          CODE_SIGNING_REQUIRED = 'NO' \
-          CODE_SIGN_IDENTITY = '' \
+        run: >
+          xcodebuild archive -scheme vd_agent -archivePath vd_agent.xcarchive 
+          TEAM_ID = '' 
+          DEVELOPMENT_TEAM = '' 
+          CODE_SIGNING_ALLOWED = 'NO'
+          CODE_SIGNING_REQUIRED = 'NO'
+          CODE_SIGN_IDENTITY = ''
           CODE_SIGN_STYLE = ''
       - name: Archive
         run: tar -acf vd_agent.xcarchive.tgz vd_agent.xcarchive
