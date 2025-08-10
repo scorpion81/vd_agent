@@ -23,10 +23,8 @@ jobs:
         run: xcodebuild archive -scheme vd_agent -archivePath vd_agent.xcarchive -arch x86_64 ONLY_ACTIVE_ARCH=YES
       - name: Archive
         run: tar -acf vd_agent.xcarchive.tgz vd_agent.xcarchive
-      - name: Package
-        run: ./package_macos_unsigned.sh vd_agent.xcarchive spice-vdagent-0.22.1.pkg
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: spice-vdagent-macOS
-          path: spice-vdagent-0.22.1.pkg vd_agent.xcarchive.tgz
+          path: vd_agent.xcarchive.tgz
