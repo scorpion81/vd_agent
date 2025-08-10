@@ -24,7 +24,7 @@ jobs:
       - name: Archive
         run: tar -acf vd_agent.xcarchive.tgz vd_agent.xcarchive
       - name: Package
-        run: package_macos_unsigned.sh vd_agent.xcarchive.tgz spice-vdagent-0.22.1.pkg
+        run: ./package_macos_unsigned.sh vd_agent.xcarchive.tgz spice-vdagent-0.22.1.pkg
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
